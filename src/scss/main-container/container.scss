@@ -1,0 +1,14 @@
+.body {
+  position: relative;
+  max-width: $maxW;
+  padding-top: 1px;
+  margin: 0 auto;
+}
+.main {
+  position: relative;
+  max-width: 70rem;
+  margin: 0 auto;
+  @media (min-width: $maxW) {
+    left: 10rem;
+  }
+}

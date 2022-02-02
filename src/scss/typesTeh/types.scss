@@ -1,0 +1,103 @@
+.types {
+  background-color: $sectionCaption;
+  overflow: hidden;
+  &__list {
+    position: relative;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  &__list-item {
+    max-width: 15rem;
+    height: 10rem;
+  }
+  &__list-btn {
+    font-family: inherit;
+    box-sizing: border-box;
+    background-color: $bgHeader;
+    border: 1px solid $borderButton;
+    border-radius: 6px;
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 1px solid $buttonColor;
+      border-radius: 50%;
+      background: url("../img/ic/dropdown.svg") center no-repeat;
+      align-self: flex-end;
+    }
+  }
+  &__button {
+    font-family: inherit;
+    font-weight: 500;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    &::before {
+      content: url("../img/ic/expand.svg");
+      margin-right: 0.5rem;
+      display: inline-block;
+      transform: translateY(0.4rem);
+      transition-duration: 0.8s;
+    }
+    &--active {
+      &::before {
+        transform: rotate(180deg) translateY(-0.15rem);
+      }
+    }
+  }
+  .swiper-pagination {
+    display: none;
+  }
+  @media (min-width: 320px) and (max-width: 767px) {
+    &__list {
+      min-height: 12rem;
+      margin-bottom: 1rem;
+    }
+    &__list-item {
+      margin-right: 1rem;
+    }
+    &__button {
+      display: none;
+    }
+    .swiper-pagination {
+      display: block;
+    }
+  }
+  @media (min-width: 768px) {
+    &__minimized {
+      max-height: 12rem;
+    }
+    &__list {
+      flex-wrap: wrap;
+    }
+    &__list-item {
+      max-width: 14rem;
+      margin-right: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    &__button {
+      margin-bottom: 2rem;
+    }
+  }
+  @media (min-width: $maxW) {
+    &__list-item {
+      margin-right: 2rem;
+      margin-bottom: 1.5rem;
+      max-width: 15rem;
+    }
+    &__button {
+      margin-bottom: 3rem;
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.modal {
+  &--active {
+    .overlay {
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      z-index: 3;
+      background-color: $bgHeader;
+      opacity: 0.9;
+    }
+  }
+  &__call,
+  &__chat {
+    position: absolute;
+    right: 0;
+    transform: translateX(350%);
+    transition: all 400ms linear;
+    z-index: 4;
+    &--active {
+      transform: translateX(0%);
+    }
+  }
+}
+
+.modal__container {
+  position: relative;
+  padding: 1.5rem 1rem 0 1rem;
+  height: 100vh;
+  background-color: $bgHeader;
+  box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
+    16px 0px 52px rgba(14, 24, 80, 0.2);
+}
+
+.modal__button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: $buttonColor;
+  background-image: url("../img/ic/close-burger.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 300ms linear;
+}
+
+.modal__button:hover {
+  transform: scale(1.1);
+}
+
+.modal__caption {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1b1c21;
+}
+
+.modal__caption::before {
+  content: url("../img/highlight.svg");
+  position: absolute;
+  left: 0;
+  transform: translateY(-10%);
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.form__tel,
+.form__name,
+.form__email,
+.form__area {
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid $borderButton;
+  border-radius: 0.5rem;
+  height: 3rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.form__area {
+  height: 7.375rem;
+  resize: none;
+  padding-top: 0.875rem;
+  margin-bottom: 0;
+}
+
+.form__tel::placeholder,
+.form__name::placeholder,
+.form__email::placeholder,
+.form__area::placeholder {
+  color: $bulletActive;
+  font-weight: 500;
+}
+
+.form__info {
+  font-size: 0.875rem;
+  color: $grayCaption;
+}
+
+.form__link {
+  text-decoration: none;
+  color: $buttonColor;
+}
+
+.form__link:hover {
+  text-decoration: underline;
+}
+
+.form__button {
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $bgHeader;
+  width: 8.5rem;
+  height: 2rem;
+  padding: 0 1rem 0 0.75rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: $buttonColor;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: linear all 700ms;
+}
+
+.form__button::after {
+  content: url("../img/ic/dropdown-white.svg");
+}
+
+.form__button:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .modal__container {
+    box-sizing: border-box;
+    width: 27.5rem;
+    padding-left: 2rem;
+  }
+
+  .modal__button {
+    position: absolute;
+    left: -4rem;
+    top: 2.4rem;
+  }
+}

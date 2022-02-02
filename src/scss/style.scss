@@ -1,0 +1,36 @@
+$bgColor: #f8f8f8;
+$buttonColor: #ff3e79;
+$borderButton: #eaeaea;
+$borderDivider: #d9fff5;
+$navBorder: #b8ffec;
+$sectionCaption: #f2f2f2;
+$highlight: #41f6d7;
+$grayCaption: #7e7e82;
+$text: #1b1c21;
+$bgHeader: #ffffff;
+$bullet: #bdbbbb;
+$bulletActive: #b5b6bc;
+$maxW: 1440px;
+
+body {
+  font-family: TT Lakes, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: $bgColor;
+  color: $text;
+  font-size: 16px;
+}
+
+@import "../scss/fonts/fonts.scss";
+@import "../scss/header/header.scss";
+@import "../scss/main-container/container.scss";
+@import "../scss/service/service.scss";
+@import "../scss/navigation/navigation.scss";
+@import "../scss/swiper/swiper-style.scss";
+@import "../scss/sidebar/sidebar.scss";
+@import "../scss/modals/modals.scss";
+@import "../scss/brands/brands.scss";
+@import "../scss/typesTeh/types.scss";
+@import "../scss/prices/prices.scss";
+@import "../scss/footer/footer.scss";
+@import "../../node_modules/swiper/swiper-bundle.css";

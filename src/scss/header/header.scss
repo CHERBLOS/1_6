@@ -1,0 +1,115 @@
+.header {
+  max-width: 70rem;
+  margin: 0 auto;
+  min-height: 5.5rem;
+  background-color: $bgHeader;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $borderDivider;
+  box-sizing: border-box;
+  &__menu {
+    margin-left: 1rem;
+    &-button {
+      margin-right: 1rem;
+      position: relative;
+      &::before {
+        content: url("../img/ic/icon-burger.svg");
+        display: inline-block;
+        vertical-align: middle;
+        transform: translate(0, 15%);
+        overflow: hidden;
+        transition-duration: 600ms;
+        transition-property: all;
+        transition-timing-function: linear;
+      }
+      &:hover::before {
+        transform: scale(0.9) translateY(-10%) rotate(-180deg);
+      }
+    }
+  }
+  &__actions,
+  &__sections,
+  &__operations,
+  &__menu {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+  }
+  &__actions {
+    display: none;
+  }
+  &__action,
+  &__operation {
+    list-style-type: none;
+    margin-right: 1rem;
+  }
+  &__operations::before {
+    content: url("../img/divider.svg");
+    margin: 0.25rem 1.25rem 0 0.25rem;
+  }
+  .button__call {
+    background: url("../img/ic/call-icon.svg");
+  }
+  .button__chat {
+    background: url("../img/ic/chat-icon.svg");
+  }
+  .button__profile {
+    background: url("../img/ic/profile-icon.svg");
+  }
+  .button__repair {
+    background: url("../img/ic/repair.svg");
+  }
+  .button__check-status {
+    background: url("../img/ic/check-status.svg");
+  }
+  .button__call,
+  .button__chat,
+  .button__profile,
+  .button__repair,
+  .button__check-status {
+    background-position: center;
+    background-repeat: no-repeat;
+    transition-duration: 500ms;
+    transition-property: all;
+    transition-timing-function: linear;
+  }
+  .button__call:hover,
+  .button__profile:hover,
+  .button__chat:hover,
+  .sidebar__search:hover,
+  .button__repair:hover,
+  .button__check-status:hover {
+    transform: rotate(10deg) scale(1.1);
+    filter: saturate(120%);
+  }
+  .button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: $buttonColor;
+    border: none;
+  }
+  @media (min-width: 768px) {
+    &__menu {
+      margin-left: 1.5rem;
+      &::before {
+        content: url("../img/divider.svg");
+        order: 1;
+        margin: 0.25rem 1.25rem 0 0.25rem;
+      }
+    }
+    &__logo {
+      order: 2;
+    }
+    &__sections {
+      margin-right: 0.5rem;
+    }
+    &__actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  @media (min-width: $maxW) {
+    display: none;
+  }
+}
