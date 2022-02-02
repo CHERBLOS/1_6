@@ -1,0 +1,10 @@
+.swiper-pagination-bullet {
+  margin: 1rem 0.75rem;
+  min-height: 0.75rem;
+  min-width: 0.75rem;
+  background-color: $bullet;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $bulletActive;
+}

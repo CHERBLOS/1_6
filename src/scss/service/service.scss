@@ -1,0 +1,166 @@
+.service {
+  &__caption {
+    color: #1b1c21;
+    font-weight: bold;
+    font-size: 1.75rem;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    &::before {
+      content: "";
+      border-right: 4px solid $highlight;
+      height: 2.5rem;
+      border-radius: 0 0.25rem 0.25rem 0;
+      margin-right: 0.75rem;
+    }
+  }
+  &__operation {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    margin-right: 2rem;
+  }
+  &__operations {
+    display: none;
+    .button__repair {
+      background-image: url("../img/ic/repair.svg");
+    }
+    .button__check-status {
+      background-image: url("../img/ic/check-status.svg");
+    }
+    .button__repair,
+    .button__check-status {
+      font-family: inherit;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition-duration: 500ms;
+      transition-property: all;
+      transition-timing-function: linear;
+      background-color: $buttonColor;
+    }
+    .button__repair:hover,
+    .button__check-status:hover {
+      transform: scale(1.1);
+      filter: saturate(120%);
+    }
+    .button__repair:after {
+      content: "Оставить заявку";
+    }
+    .button__check-status:after {
+      content: "Статус ремонта";
+    }
+    .button__repair:after,
+    .button__check-status:after {
+      display: inline-block;
+      font-weight: 500;
+      white-space: nowrap;
+      transform: translateX(-7rem);
+    }
+  }
+  &__deskription {
+    margin-top: 1.5rem;
+  }
+  &__deskription-text {
+    font-size: 0.875rem;
+    margin: auto 1rem;
+    letter-spacing: 0.2px;
+    color: $text;
+  }
+  &__deskription-p {
+    &:nth-child(2),
+    &:last-child {
+      display: none;
+    }
+  }
+  &__button {
+    font-family: inherit;
+    font-weight: 500;
+    margin-left: 1rem;
+    background-color: $bgColor;
+    &::before {
+      content: url("../img/ic/expand.svg");
+      display: inline-block;
+      transform: translateY(0.5rem);
+      margin-right: 0.5rem;
+    }
+    &:hover::before {
+      animation-name: button_jumping;
+      animation-duration: 1.2s;
+      animation-fill-mode: backwards;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+  &__image {
+    margin-top: 1rem;
+  }
+  .button {
+    border: none;
+  }
+  @media (min-width: 768px) {
+    &__caption {
+      margin-bottom: 1.5rem;
+      &::before {
+        margin-right: 1.25rem;
+      }
+    }
+    &__navigation {
+      margin-top: 0.5rem;
+    }
+    &__deskription {
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__deskription-text {
+      min-width: 19.5rem;
+    }
+    &__deskription-p {
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+    &__image {
+      margin-right: 1.5rem;
+    }
+  }
+  @media (min-width: $maxW) {
+    &__caption-items {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.625rem;
+    }
+    &__caption {
+      margin-top: 0;
+      margin-bottom: 0;
+      &::before {
+        margin-right: 1.875rem;
+      }
+    }
+    &__operations {
+      display: flex;
+    }
+    &__operation {
+      &:first-child {
+        margin-right: 9rem;
+      }
+    }
+    &__deskription-p {
+      &:last-child {
+        display: inline;
+      }
+    }
+    &__deskription-items {
+      margin: 0 2rem;
+    }
+    &__deskription-text {
+      max-width: auto;
+    }
+  }
+  @keyframes button_jumping {
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+}
