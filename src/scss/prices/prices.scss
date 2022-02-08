@@ -45,8 +45,9 @@
     justify-content: space-between;
     align-items: center;
     transition: linear all 700ms;
+    cursor: pointer;
     &::after {
-      content: url("../img/ic/dropdown-white.svg");
+      content: url("../assets/img/ic/dropdown-white.svg");
     }
     &:hover {
       transform: scale(1.1);
@@ -62,7 +63,7 @@
     font-weight: 500;
     color: $text;
     &::after {
-      content: url("../img/ic/dropdown.svg");
+      content: url("../assets/img/ic/dropdown.svg");
       margin-left: 0.6125rem;
     }
   }

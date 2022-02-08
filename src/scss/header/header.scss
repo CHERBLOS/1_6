@@ -12,8 +12,9 @@
     &-button {
       margin-right: 1rem;
       position: relative;
+      cursor: pointer;
       &::before {
-        content: url("../img/ic/icon-burger.svg");
+        content: url("../assets/img/ic/icon-burger.svg");
         display: inline-block;
         vertical-align: middle;
         transform: translate(0, 15%);
@@ -44,23 +45,23 @@
     margin-right: 1rem;
   }
   &__operations::before {
-    content: url("../img/divider.svg");
+    content: url("../assets/img/divider.svg");
     margin: 0.25rem 1.25rem 0 0.25rem;
   }
   .button__call {
-    background: url("../img/ic/call-icon.svg");
+    background: url("../assets/img/ic/call-icon.svg");
   }
   .button__chat {
-    background: url("../img/ic/chat-icon.svg");
+    background: url("../assets/img/ic/chat-icon.svg");
   }
   .button__profile {
-    background: url("../img/ic/profile-icon.svg");
+    background: url("../assets/img/ic/profile-icon.svg");
   }
   .button__repair {
-    background: url("../img/ic/repair.svg");
+    background: url("../assets/img/ic/repair.svg");
   }
   .button__check-status {
-    background: url("../img/ic/check-status.svg");
+    background: url("../assets/img/ic/check-status.svg");
   }
   .button__call,
   .button__chat,
@@ -72,6 +73,7 @@
     transition-duration: 500ms;
     transition-property: all;
     transition-timing-function: linear;
+    cursor: pointer;
   }
   .button__call:hover,
   .button__profile:hover,
@@ -93,7 +95,7 @@
     &__menu {
       margin-left: 1.5rem;
       &::before {
-        content: url("../img/divider.svg");
+        content: url("../assets/img/divider.svg");
         order: 1;
         margin: 0.25rem 1.25rem 0 0.25rem;
       }

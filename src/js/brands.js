@@ -1,13 +1,49 @@
 const minimizerList = document.querySelector(".brands__container");
-const buttonMore = minimizerList.nextElementSibling;
+const showMoreButton = minimizerList.nextElementSibling;
+const brandsItems = minimizerList.querySelectorAll(".brands__list-btn");
+let indexStart;
 
-buttonMore.addEventListener("click", function btnMore() {
+const showMoreItems = (event) => {
   minimizerList.classList.toggle("brands__minimized");
-  buttonMore.classList.toggle("brands__button--active");
+  showMoreButton.classList.toggle("brands__button--active");
 
   if (minimizerList.classList.contains("brands__minimized")) {
-    buttonMore.textContent = "Показать все";
+    showMoreButton.textContent = "Показать все";
+    tabIndexAdd(indexStart);
   } else {
-    buttonMore.textContent = "Скрыть";
+    showMoreButton.textContent = "Скрыть";
+    tabIndexRemove(indexStart);
   }
-});
+};
+
+showMoreButton.addEventListener("click", showMoreItems);
+
+const tabIndexAdd = (index) => {
+  for (index; index < brandsItems.length; index++) {
+    brandsItems[index].setAttribute("tabindex", "-1");
+  }
+};
+
+const tabIndexRemove = (index) => {
+  for (index; index < brandsItems.length; index++) {
+    brandsItems[index].setAttribute("tabindex", "0");
+  }
+};
+
+const tabChecker = () => {
+  if (
+    window.screen.width < 1016 &&
+    minimizerList.classList.contains("brands__minimized")
+  ) {
+    indexStart = 6;
+    tabIndexAdd(indexStart);
+  } else if (
+    window.screen.width > 1015 &&
+    minimizerList.classList.contains("brands__minimized")
+  ) {
+    indexStart = 8;
+    tabIndexAdd(indexStart);
+  }
+};
+
+document.addEventListener("DOMContentLoaded", tabChecker);

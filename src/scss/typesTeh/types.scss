@@ -33,7 +33,7 @@
       height: 2.5rem;
       border: 1px solid $buttonColor;
       border-radius: 50%;
-      background: url("../img/ic/dropdown.svg") center no-repeat;
+      background: url("../assets/img/ic/dropdown.svg") center no-repeat;
       align-self: flex-end;
     }
   }
@@ -44,7 +44,7 @@
     border: none;
     cursor: pointer;
     &::before {
-      content: url("../img/ic/expand.svg");
+      content: url("../assets/img/ic/expand.svg");
       margin-right: 0.5rem;
       display: inline-block;
       transform: translateY(0.4rem);

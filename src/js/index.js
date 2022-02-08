@@ -5,5 +5,6 @@ import "../js/types.js";
 import "../js/sidebar.js";
 import "../js/modal-call.js";
 import "../js/modal-chat.js";
+import "../js/navigation.js";
 
 console.log("Works!");

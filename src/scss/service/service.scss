@@ -23,10 +23,10 @@
   &__operations {
     display: none;
     .button__repair {
-      background-image: url("../img/ic/repair.svg");
+      background-image: url("../assets/img/ic/repair.svg");
     }
     .button__check-status {
-      background-image: url("../img/ic/check-status.svg");
+      background-image: url("../assets/img/ic/check-status.svg");
     }
     .button__repair,
     .button__check-status {
@@ -37,6 +37,7 @@
       transition-property: all;
       transition-timing-function: linear;
       background-color: $buttonColor;
+      cursor: pointer;
     }
     .button__repair:hover,
     .button__check-status:hover {
@@ -77,8 +78,9 @@
     font-weight: 500;
     margin-left: 1rem;
     background-color: $bgColor;
+    cursor: pointer;
     &::before {
-      content: url("../img/ic/expand.svg");
+      content: url("../assets/img/ic/expand.svg");
       display: inline-block;
       transform: translateY(0.5rem);
       margin-right: 0.5rem;

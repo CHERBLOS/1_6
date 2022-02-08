@@ -1,8 +1,10 @@
 .body {
   position: relative;
   max-width: $maxW;
+  height: 100%;
   padding-top: 1px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 .main {
   position: relative;

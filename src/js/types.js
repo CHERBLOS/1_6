@@ -1,13 +1,49 @@
 const minimizerList = document.querySelector(".types__container");
-const buttonMore = minimizerList.nextElementSibling;
+const showMoreButton = minimizerList.nextElementSibling;
+const typesItems = minimizerList.querySelectorAll(".types__list-btn");
+let indexStart;
 
-buttonMore.addEventListener("click", function btnMore() {
+const showMoreItems = (event) => {
   minimizerList.classList.toggle("types__minimized");
-  buttonMore.classList.toggle("types__button--active");
+  showMoreButton.classList.toggle("types__button--active");
 
   if (minimizerList.classList.contains("types__minimized")) {
-    buttonMore.textContent = "Показать все";
+    showMoreButton.textContent = "Показать все";
+    tabIndexAdd(indexStart);
   } else {
-    buttonMore.textContent = "Скрыть";
+    showMoreButton.textContent = "Скрыть";
+    tabIndexRemove(indexStart);
   }
-});
+};
+
+const tabIndexAdd = (index) => {
+  for (index; index < typesItems.length; index++) {
+    typesItems[index].setAttribute("tabindex", "-1");
+  }
+};
+
+const tabIndexRemove = (index) => {
+  for (index; index < typesItems.length; index++) {
+    typesItems[index].setAttribute("tabindex", "0");
+  }
+};
+
+const tabChecker = () => {
+  if (
+    window.screen.width < 1016 &&
+    minimizerList.classList.contains("types__minimized")
+  ) {
+    indexStart = 3;
+    tabIndexAdd(indexStart);
+  } else if (
+    window.screen.width > 1015 &&
+    minimizerList.classList.contains("types__minimized")
+  ) {
+    indexStart = 4;
+    tabIndexAdd(indexStart);
+  }
+};
+
+showMoreButton.addEventListener("click", showMoreItems);
+
+document.addEventListener("DOMContentLoaded", tabChecker);
